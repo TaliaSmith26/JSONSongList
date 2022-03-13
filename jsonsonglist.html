@@ -37,23 +37,23 @@
 
 	<h1>Song List</h1>
 
-	<h2>Part 2</h2>
+	<h2>Serialized Data: </h2>
 		<div id="serialized">&nbsp;</div> 
-	<h2>Part 3</h2>
+	<h2>User-friendly Data: </h2>
 		<div id="table">&nbsp;</div> 
-	<h2>Part 4</h2>
-		<div id="divForm"> 
+	<h2>Genre Form: </h2>
+		<div id="form"> 
 			<form id="filter">
 				<label for="genres">Choose genre:</label> 
 				<select id = "genres">
-			        <option>Choose an option</option>
+			        <option> </option>
 			        <option>Soul/Rythm and Blues</option>
 			        <option>Pop/Rythm and Blues</option>
 			        <option>Disco</option>
 			        <option>Reggae</option>
 			        <option>Classic Rock</option>
 				</select>
-				<button type="button" onclick="filterGenre();">Filter</button> 
+				<button type="button" onclick="chooseGenre();">Filter</button> 
 			</form>
 		</div>
 	<br><br>
@@ -69,27 +69,27 @@
 		        var data = document.getElementById("string").innerHTML;
 		        data = JSON.parse(data);
 		      	console.log(data);
-		      	tstr = "<br />";
+		      	update = "<br />";
 		     	data.forEach(function(song) {
-		        tstr += "<ul style=\"list-style-type: none;\"<li>" + "Title:   " + song.title + "</li>"+ "<li>" + "Artist: ";
+		        update += "<ul style=\"list-style-type: none;\"<li>" + "Title:   " + song.title + "</li>"+ "<li>" + "Artist: ";
 		        for (var i = 0; i < song.artist.length; i++) {
-		          tstr += song.artist[i];
+		          update += song.artist[i];
 		        }
-		        tstr += "</li>" + "<li>" + "Genre(s): ";
+		        update += "</li>" + "<li>" + "Genre(s): ";
 		        for (var i = 0; i < song.genre.length; i++) {
-		          tstr += song.genre[i]; 
+		          update += song.genre[i]; 
 		        }
-		        tstr += "</li>" + "<li>" + "Released: " + song.releaseyear +"</li>" + "</ul><br>";
+		        update += "</li>" + "<li>" + "Released: " + song.releaseyear +"</li>" + "</ul><br>";
 		        });
 
-		      document.getElementById("table").innerHTML = tstr;
+		      document.getElementById("table").innerHTML = update;
 		      }
 		    };
 		    xhttp.open("GET", "https://taliasmith26.github.io/JSONSongList/songlist.json", true);
 		    xhttp.send();
 		});
 
-		function filterGenre() {
+		function chooseGenre() {
 			var xhttp = new XMLHttpRequest();
 			xhttp.onreadystatechange = function() {
 				if (this.readyState == 4 && this.status == 200) {
@@ -97,15 +97,15 @@
 					data = JSON.parse(data);
 					selectedGenre = document.getElementById("genres").value;
 					console.log(selectedGenre);
-					tstr = "<br />";
+					update = "<br />";
 					data.forEach(function(song) {
 						if (song.genre == selectedGenre) {
-							tstr += "<ul style=\"list-style-type:none;\">";
-							tstr += "Title: " + song.title + "</li>" + "<li>";
+							update += "<ul style=\"list-style-type:none;\">";
+							update += "Title: " + song.title + "</li>" + "<li>";
 						}
 					});
-					console.log(tstr);
-					document.getElementById("displayFiltered").innerHTML = tstr;
+					console.log(update);
+					document.getElementById("displayFiltered").innerHTML = update;
 				}
 			};
 			xhttp.open("GET", "https://taliasmith26.github.io/JSONSongList/songlist.json",true);
@@ -116,10 +116,9 @@
 
 	<div id="displayFiltered">&nbsp;</div>
 	
+	<br><br>
 
 </body>
 
 </html>
 
-
-  
