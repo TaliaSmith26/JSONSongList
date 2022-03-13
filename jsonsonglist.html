@@ -1,7 +1,10 @@
 <!DOCTYPE html> 
 <html> 
 <head>
-	<meta name='viewport' content= "width=device-width, initial-scale=1"> 
+
+	<meta charset="utf-8">
+
+	<meta name='viewport' content= "width=device-width, initial-scale=1">
 
 	<title>JSON Song List</title>
 
@@ -14,36 +17,94 @@
 </head>
 
 <body>
-	
-
 
 	<h1>JSON Song List</h1>
 
+	<h2>Part 2</h2>
+		<div id="serialized">&nbsp;</div> 
+	<h2>Part 3</h2>
+		<div id="table">&nbsp;</div> 
+	<h2>Part 4</h2>
+		<div id="divForm"> 
+			<form id="filter">
+				<label for="genres">Choose genre:</label> <select id = "genres">
+			        <option> Choose an option</option>
+			        <option>Soul/Rythm and Blues</option>
+			        <option>Pop/Rythm and Blues</option>
+			        <option>Disco</option>
+			        <option>Reggae</option>
+			        <option>Reggae</option>
+			        <option>Classic Rock</option>
+				</select>
+				<button type="button" onclick="filterGenre();">Filter</button> 
+		</form>
+		</div>
+	<br><br>
 
+
+	 
 	<script language="javascript">
+		$(document).ready(function() {
+		    var xhttp = new XMLHttpRequest; 
+		    xhttp.onreadystatechange = function() {
+		      if (this.readyState == 4 && this.status == 200) {
+		        str = "<div id=\"string\">" + this.responseText + "</div><br>"; document.getElementById("serialized").innerHTML = str;
+		        var data = document.getElementById("string").innerHTML;
+		        data = JSON.parse(data);
+		      update = "<br>" 
+		      data.forEach(function(song) {
+		        update += "<ul style=\"list-style-type: none;\"<li>" + "Title:   " + song.title + "</li>"
+		            + "<li>" + "Artist: ";
+		        for (var i = 0; i < song.artist.length; i++) {
+		          update += song.artist[i];
+		        }
+		        update += "</li>" + "<li>" + "Genre(s): ";
+		        for (var i = 0; i < song.genre.length; i++) {
+		          update += song.genre[i]; 
+		        }
+		        update += "</li>" + "<li>" + "Released: " + song.releaseyear +"</li>" + "</ul><br>";
+		        });
 
-		fetch("https://taliasmith26.github.io/JSONSongList/songlist.json", {
-		  credentials: "same-origin"
+		      document.getElementById("table").innerHTML = update;
+		      }
+		    };
+		    xhttp.open("GET", "https://taliasmith26.github.io/JSONSongList/songlist.json", true);
+		    xhttp.send();
 		});
 
-		strSonglist = JSON.stringify(songList); 
-		document.write (strSonglist + "<br><br><br><br>"); 
-
+		function filterGenre() {
+			var xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechange = function() {
+				if (this.readyState == 4 && this.status == 200) {
+					var data = this.responseText;
+					data = JSON.parse(data);
+					selectedGenre = document.getElementById("genres").value;
+					console.log(selectedGenre);
+					update = "<br />";
+					data.forEach(function(song) {
+						if (song.genre == selectedGenre) {
+							update += "<ul style=\"list-style-type:none;\">";
+							update += "Title: " + song.title + "</li>" + "<li>" + "Artist: " + song.artist + "</li>" + "<li>" + "Genre: ";
+							for (var i = 0; i < song.genre.length; i++) { 
+								update += song.genre[i];
+							}
+							update += "</li>" + "<li>" + "Year: " + song.releaseyear + "</li>"+ "</ul><br>";
+						}
+					});
+					console.log(update);
+					document.getElementById("displayFiltered").innerHTML = update;
+				}
+			};
+			xhttp.open("GET", "https://taliasmith26.github.io/JSONSongList/songlist.json",true);
+			xhttp.send();
+		}
 
 	</script>
+
+	<div id="displayFiltered">&nbsp;</div>
 	
-
-
-<br><br><br>
+	<br><br><br>
 
 </body>
 
 </html>
-
-
-
-  
-
-
-
-  
