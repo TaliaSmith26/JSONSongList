@@ -69,7 +69,7 @@
 		        var data = document.getElementById("string").innerHTML;
 		        data = JSON.parse(data);
 		      	
-		      	tstr = "<br>" 
+		      	tstr = "<br />";
 		     	data.forEach(function(song) {
 		        tstr += "<ul style=\"list-style-type: none;\"<li>" + "Title:   " + song.title + "</li>"+ "<li>" + "Artist: ";
 		        for (var i = 0; i < song.artist.length; i++) {
