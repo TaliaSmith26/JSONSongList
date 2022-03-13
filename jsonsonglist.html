@@ -67,7 +67,7 @@
 		      	str = "<div id=\"string\">" + this.responseText + "</div><br>"; 
 		      	document.getElementById("serialized").innerHTML = str;
 		        var data = document.getElementById("string").innerHTML;
-		        data = JSON.stringify(data);
+		        data = JSON.parse(data);
 		      	console.log(data);
 		      	tstr = "<br />";
 		     	data.forEach(function(song) {
