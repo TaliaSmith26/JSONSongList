@@ -1,64 +1,64 @@
 {
 	"songs": [
 		{
-			"artist": "Stevie Wonder",
 			"title": "Signed Sealed Delivered",
-			"genre": "Soul/Rythm and Blues",
-			"releaseyear": 1970
+			"artist": "Stevie Wonder",
+			"releaseyear": 1970,
+			"genre": "Soul/Rythm and Blues"
 		},
 		{
-			"artist": "Aretha Franklin",
 			"title": "Respect",
-			"genre": "Soul/Rythm and Blues",
-			"releaseyear": 2002
+			"artist": "Aretha Franklin",
+			"releaseyear": 2002,
+			"genre": "Soul/Rythm and Blues"
 		},
 		{
-			"artist": "Michael Jackson",
 			"title": "Black Or White",
-			"genre": "Pop/Rythm and Blues",
-			"releaseyear": 1991
+			"artist": "Michael Jackson",
+			"releaseyear": 1991,
+			"genre": "Pop/Rythm and Blues"
 		},
 		{
-			"artist": "Prince",
 			"title": "Kiss",
-			"genre": "Pop/Rythm and Blues", 
-			"releaseyear": 1986
+			"artist": "Prince",
+			"releaseyear": 1986,
+			"genre": "Pop/Rythm and Blues"
 		},
 		{
-			"artist": "The O' Jays",
 			"title": "Love Train",
-			"genre": "Disco",
-			"releaseyear": 1979
+			"artist": "The O' Jays",
+			"releaseyear": 1979,
+			"genre": "Disco"		
 		},
 		{
-			"artist": "Sylvester",
 			"title": "You Make Me Feel (Mighty Real)",
-			"genre": "Disco",
-			"releaseyear": 1978
+			"artist": "Sylvester",
+			"releaseyear": 1978,
+			"genre": "Disco"
 		},
 		{
-			"artist": "Bob Marley",
 			"title": "Is This Love",
-			"genre": "Reggae",
-			"releaseyear": 1978
-		},
-		{
 			"artist": "Bob Marley",
+			"releaseyear": 1978,
+			"genre": "Reggae"
+		},
+		{
 			"title": "Jamming",
-			"genre": "Reggae",
-			"releaseyear": 1977
+			"artist": "Bob Marley",
+			"releaseyear": 1977,
+			"genre": "Reggae"
 		},
 		{
-			"artist": "Blondie",
 			"title": "Heart of Glass",
-			"genre": "Classic Rock",
-			"releaseyear": 1978
+			"artist": "Blondie",
+			"releaseyear": 1978,
+			"genre": "Classic Rock"
 		},
 		{
-			"artist": "Fleetwood Mac",
 			"title": "Go Your Own Way",
-			"genre": "Classic Rock",
-			"releaseyear": 1977
+			"artist": "Fleetwood Mac",
+			"releaseyear": 1977,
+			"genre": "Classic Rock"
 		}
 	]
 }
