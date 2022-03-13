@@ -68,7 +68,7 @@
 		      	document.getElementById("serialized").innerHTML = str;
 		        var data = document.getElementById("string").innerHTML;
 		        data = JSON.parse(data);
-		      	
+		      	console.log(data);
 		      	tstr = "<br />";
 		     	data.forEach(function(song) {
 		        tstr += "<ul style=\"list-style-type: none;\"<li>" + "Title:   " + song.title + "</li>"+ "<li>" + "Artist: ";
