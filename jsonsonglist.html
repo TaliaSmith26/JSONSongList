@@ -20,29 +20,14 @@
 	<h1>JSON Song List</h1>
 
 
-	 <div id="myData"></div>
 	<script language="javascript">
 
-		fetch("./songlist.json")
-		  .then(function (response) {
-		    return response.json();
-		  })
-		  .then(function (data) {
-		    appendData(data);
-		  })
-		  .catch(function (err) {
-		    console.log(err);
-		  });
+		fetch("https://taliasmith26.github.io/JSONSongList/songlist.json", {
+		  credentials: "same-origin"
+		});
 
-		function appendData(data) {
-		  var mainContainer = document.getElementById("myData");
-		  for (var i = 0; i < data.length; i++) {
-		    var div = document.createElement("div");
-		    div.innerHTML = 'Name: ' + data[i].artist;
-		    mainContainer.appendChild(div);
-		  }
-		}
-
+		strSonglist = JSON.stringify(songList); 
+		document.write (strSonglist + "<br><br><br><br>"); 
 
 
 	</script>
