@@ -9,20 +9,26 @@
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="crossorigin="anonymous"></script>
 
 	<style type="text/css">
-		body {
-               font-family: "Courier New", Courier, monospace;
-               text-align: center;
-		} 
+		
 		h1 {
-		font-family: "Courier New", Courier, monospace;
-		text-align: center;
-		font-size: 25px;
+			padding: 60px;
+			font-size: 50px;
+			font-weight:bold ;
+			font-family: Lucida Handwriting;
+			background-color: darkslategray;
+			margin: -10px;
+			color: white;
 		} 
 		h2 {
-			font-family: "Courier New", Courier, monospace;
-			text-align: center;
-			font-size: 20px;
+			font-size: 18px;
 		}
+		body {
+			background-color: darkseagreen;
+			text-align: center;
+			font-weight: bold;
+			font-size: 16px;
+
+		} 
 		ul li {
 		    list-style-type: none;
 		}
@@ -35,7 +41,7 @@
 <body>
 
 
-	<h1>Song List</h1>
+	<h1> <i> East Coast Soul </i> Song List</h1>
 
 	<h2>Serialized Data: </h2>
 		<div id="serialized">&nbsp;</div> 
@@ -64,13 +70,13 @@
 		    var xhttp = new XMLHttpRequest; 
 		    xhttp.onreadystatechange = function() {
 		      if (this.readyState == 4 && this.status == 200) {
-		      	str = "<div id=\"string\">" + this.responseText + "</div><br>"; 
-		      	document.getElementById("serialized").innerHTML = str;
-		        var data = document.getElementById("string").innerHTML;
-		        data = JSON.parse(data);
-		      	console.log(data);
+		      	stringDiv = "<div id=\"string\">" + this.responseText + "</div><br>"; 
+		      	document.getElementById("serialized").innerHTML = stringDiv;
+		        var jsonData = document.getElementById("string").innerHTML;
+		        jsonData = JSON.parse(jsonData);
+		      	console.log(jsonData);
 		      	update = "<br />";
-		     	data.forEach(function(song) {
+		     	jsonData.forEach(function(song) {
 		        update += "<ul style=\"list-style-type: none;\"<li>" + "Title:   " + song.title + "</li>"+ "<li>" + "Artist: ";
 		        for (var i = 0; i < song.artist.length; i++) {
 		          update += song.artist[i];
@@ -93,19 +99,19 @@
 			var xhttp = new XMLHttpRequest();
 			xhttp.onreadystatechange = function() {
 				if (this.readyState == 4 && this.status == 200) {
-					var data = this.responseText;
-					data = JSON.parse(data);
-					selectedGenre = document.getElementById("genres").value;
-					console.log(selectedGenre);
+					var jsonData = this.responseText;
+					jsonData = JSON.parse(jsonData);
+					genreChoice = document.getElementById("genres").value;
+					console.log(genreChoice);
 					update = "<br />";
-					data.forEach(function(song) {
-						if (song.genre == selectedGenre) {
+					jsonData.forEach(function(song) {
+						if (song.genre == genreChoice) {
 							update += "<ul style=\"list-style-type:none;\">";
 							update += "Title: " + song.title + "</li>" + "<li>";
 						}
 					});
 					console.log(update);
-					document.getElementById("displayFiltered").innerHTML = update;
+					document.getElementById("filteredOutput").innerHTML = update;
 				}
 			};
 			xhttp.open("GET", "https://taliasmith26.github.io/JSONSongList/songlist.json",true);
@@ -114,9 +120,9 @@
 
 	</script>
 
-	<div id="displayFiltered">&nbsp;</div>
+	<div id="filteredOutput">&nbsp;</div>
 	
-	<br><br>
+	<br><br><br><br>
 
 </body>
 
