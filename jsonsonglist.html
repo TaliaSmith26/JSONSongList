@@ -2,11 +2,15 @@
 <html> 
 <head>
 
-	<meta charset="utf-8">
+	
 
 	<meta name='viewport' content= "width=device-width, initial-scale=1">
+	<meta charset="utf-8">
 
 	<title>JSON Song List</title>
+
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
 	<style type="text/css">
       
@@ -18,7 +22,8 @@
 
 <body>
 
-	<h1>JSON Song List</h1>
+
+	<h1>Song List</h1>
 
 	<h2>Part 2</h2>
 		<div id="serialized">&nbsp;</div> 
@@ -27,8 +32,9 @@
 	<h2>Part 4</h2>
 		<div id="divForm"> 
 			<form id="filter">
-				<label for="genres">Choose genre:</label> <select id = "genres">
-			        <option> Choose an option</option>
+				<label for="genres">Choose genre:</label> 
+				<select id = "genres">
+			        <option>Choose an option</option>
 			        <option>Soul/Rythm and Blues</option>
 			        <option>Pop/Rythm and Blues</option>
 			        <option>Disco</option>
@@ -37,10 +43,9 @@
 			        <option>Classic Rock</option>
 				</select>
 				<button type="button" onclick="filterGenre();">Filter</button> 
-		</form>
+			</form>
 		</div>
 	<br><br>
-
 
 	 
 	<script language="javascript">
@@ -48,13 +53,13 @@
 		    var xhttp = new XMLHttpRequest; 
 		    xhttp.onreadystatechange = function() {
 		      if (this.readyState == 4 && this.status == 200) {
-		        str = "<div id=\"string\">" + this.responseText + "</div><br>"; document.getElementById("serialized").innerHTML = str;
+		      	str = "<div id=\"string\">" + this.responseText + "</div><br>"; document.getElementById("serialized").innerHTML = str;
 		        var data = document.getElementById("string").innerHTML;
 		        data = JSON.parse(data);
-		      update = "<br>" 
-		      data.forEach(function(song) {
-		        update += "<ul style=\"list-style-type: none;\"<li>" + "Title:   " + song.title + "</li>"
-		            + "<li>" + "Artist: ";
+		      	
+		      	update = "<br>" 
+		     	data.forEach(function(song) {
+		        update += "<ul style=\"list-style-type: none;\"<li>" + "Title:   " + song.title + "</li>"+ "<li>" + "Artist: ";
 		        for (var i = 0; i < song.artist.length; i++) {
 		          update += song.artist[i];
 		        }
@@ -88,7 +93,7 @@
 							for (var i = 0; i < song.genre.length; i++) { 
 								update += song.genre[i];
 							}
-							update += "</li>" + "<li>" + "Year: " + song.releaseyear + "</li>"+ "</ul><br>";
+							update += "</li>" + "<li>" + "Year: " + song.releaseyear + "</li>" + "</ul><br>";
 						}
 					});
 					console.log(update);
