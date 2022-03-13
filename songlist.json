@@ -3,61 +3,61 @@
 		{
 			"artist": "Stevie Wonder",
 			"title": "Signed Sealed Delivered",
-			"genre": ["Soul", "Rythm and Blues"],
+			"genre": "Soul/Rythm and Blues",
 			"releaseyear": 1970
 		},
 		{
 			"artist": "Aretha Franklin",
 			"title": "Respect",
-			"genre": ["Soul", "Rythm and BluesBlues"],
+			"genre": "Soul/Rythm and BluesBlues",
 			"releaseyear": 2002
 		},
 		{
 			"artist": "Michael Jackson",
 			"title": "Black Or White",
-			"genre": ["Pop", "Rythm and Blues"],
+			"genre": "Pop/Rythm and Blues",
 			"releaseyear": 1991
 		},
 		{
 			"artist": "Prince",
 			"title": "Kiss",
-			"genre": ["Pop", "Rythm and Blues"], 
+			"genre": "Pop/Rythm and Blues", 
 			"releaseyear": 1986
 		},
 		{
 			"artist": "The O' Jays",
 			"title": "Love Train",
-			"genre": ["Disco"],
+			"genre": "Disco",
 			"releaseyear": 1979
 		},
 		{
 			"artist": "Sylvester",
 			"title": "You Make Me Feel (Mighty Real)",
-			"genre": ["Disco"],
+			"genre": "Disco",
 			"releaseyear": 1978
 		},
 		{
 			"artist": "Bob Marley",
 			"title": "Is This Love",
-			"genre": ["Reggae"],
+			"genre": "Reggae",
 			"releaseyear": 1978
 		},
 		{
 			"artist": "Bob Marley",
 			"title": "Jamming",
-			"genre": ["Reggae"],
+			"genre": "Reggae",
 			"releaseyear": 1977
 		},
 		{
 			"artist": "Blondie",
 			"title": "Heart of Glass",
-			"genre": ["Classic Rock"],
+			"genre": "Classic Rock",
 			"releaseyear": 1978
 		},
 		{
 			"artist": "Fleetwood Mac",
 			"title": "Go Your Own Way",
-			"genre": ["Classic Rock"],
+			"genre": "Classic Rock",
 			"releaseyear": 1977
 		}
 	]
