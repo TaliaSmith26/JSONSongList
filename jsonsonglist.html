@@ -81,7 +81,7 @@
 		      	console.log(jsonData);
 		      	update = "<br />";
 		     	jsonData.forEach(function(song) {
-		        update += "<ul style=\"list-style-type: none;\"<li>" + "Title:   " + song.title + "</li>"+ "<li>" + "Artist: ";
+		        update += "<ul style=\"list-style-type: none;\"<li>" + song.title + "</li>"+ "<li>" + "Artist: ";
 		        for (var i = 0; i < song.artist.length; i++) {
 		          update += song.artist[i];
 		        }
@@ -111,7 +111,7 @@
 					jsonData.forEach(function(song) {
 						if (song.genre == genreChoice) {
 							update += "<ul style=\"list-style-type:none;\">";
-							update += "Title: " + song.title + "</li>" + "<li>";
+							update += song.title + "</li>" + "<li>";
 						}
 					});
 					console.log(update);
@@ -131,4 +131,6 @@
 </body>
 
 </html>
+
+
 
